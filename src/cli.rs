@@ -366,7 +366,7 @@ pub async fn cli() -> Result<(), Box<dyn Error>> {
         rl.bind_sequence(rustyline::KeyPress::Ctrl('D'), rustyline::Cmd::Interrupt);
 
         let prompt = &format!(
-            "{}{}> ",
+            "{}\n{}> ",
             cwd,
             match current_branch() {
                 Some(s) => format!("({})", s),
