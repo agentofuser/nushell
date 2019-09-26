@@ -221,7 +221,7 @@ pub fn string(input: NomSpan) -> IResult<NomSpan, TokenNode> {
 pub fn external(input: NomSpan) -> IResult<NomSpan, TokenNode> {
     trace_step(input, "external", move |input| {
         let start = input.offset;
-        let (input, _) = tag("^")(input)?;
+        let (input, _) = tag(";")(input)?;
         let (input, bare) = take_while(is_bare_char)(input)?;
         let end = input.offset;
 
